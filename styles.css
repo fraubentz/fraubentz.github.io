@@ -1,0 +1,65 @@
+/* Global Styles */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-image: url('path/to/your/background.jpg'); /* Background image */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Container */
+.container {
+  text-align: center;
+  max-width: 500px;
+  margin: auto;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent background */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Profile Card */
+.profile-card {
+  padding: 20px;
+}
+
+.profile-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  border: 4px solid #800020; /* Wine color border */
+}
+
+.profile-name {
+  font-size: 2em;
+  color: #4b0026; /* Darker wine color */
+  margin-bottom: 10px;
+}
+
+.profile-bio {
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* LinkedIn Button */
+.linkedin-button {
+  display: inline-block;
+  background-color: #800020; /* Wine color */
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.linkedin-button:hover {
+  background-color: #4b0026; /* Darker wine color on hover */
+}
