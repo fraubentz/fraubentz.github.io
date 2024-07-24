@@ -1,78 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Profile Page</title>
-    <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-        }
-        .container {
-            display: flex;
-            flex-wrap: wrap;
-            min-height: 100vh;
-        }
-        .sidebar {
-            flex: 1;
-            max-width: 300px;
-            background-color: #f4f4f4;
-            padding: 20px;
-            text-align: center;
-        }
-        .sidebar img {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-        }
-        .sidebar a {
-            display: block;
-            margin: 10px 0;
-            padding: 10px;
-            text-decoration: none;
-            color: white;
-            background-color: #0077b5; /* LinkedIn Blue */
-            border-radius: 5px;
-        }
-        .sidebar a.email {
-            background-color: #555; /* Dark grey for email */
-        }
-        .main {
-            flex: 3;
-            padding: 20px;
-        }
-        .main-content {
-            max-width: 800px;
-            margin: auto;
-        }
-        @media (max-width: 768px) {
-            .sidebar {
-                max-width: none;
-                width: 100%;
-                order: 2;
-            }
-            .main {
-                width: 100%;
-                order: 1;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PY Liu</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <div class="sidebar">
-            <img src="profile.jpg" alt="Profile Picture">
-            <a href="mailto:youremail@example.com" class="email">Email Me</a>
-            <a href="https://www.linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
-        </div>
-        <div class="main">
-            <div class="main-content">
-                <h1>Welcome to My Page</h1>
-                <p>This is the main content area where you can write anything you want. It's responsive and adjusts based on the screen size. You can add more sections, images, or text as needed.</p>
-            </div>
-        </div>
+  <div class="container">
+    <div class="profile-card">
+      <img src="/profile.jpg" alt="Your Profile Picture" class="profile-picture">
+      <h1 class="name">Poyi Liu</h1>
+      <p class="bio">I love building teams to solve problems.</p>
+      <a href="https://www.linkedin.com/in/poyiliubentz" class="linkedin-button">Connect on LinkedIn</a>
     </div>
+  </div>
 </body>
 </html>
