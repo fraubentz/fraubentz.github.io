@@ -2,8 +2,8 @@
 body, html {
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif;
-  background-image: url('path/to/your/background.jpg'); /* Background image */
+  font-family: Verdana, sans-serif;
+  background-image: url('background.jpg'); /* Background image */
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -34,7 +34,7 @@ body, html {
   height: 150px;
   border-radius: 50%;
   margin-bottom: 20px;
-  border: 4px solid #800020; /* Wine color border */
+  border: 4px solid #4C4542; /* Wine color border */
 }
 
 .profile-name {
@@ -51,7 +51,7 @@ body, html {
 /* LinkedIn Button */
 .linkedin-button {
   display: inline-block;
-  background-color: #800020; /* Wine color */
+  background-color: #4C4542; /* Wine color */
   color: white;
   padding: 10px 20px;
   border-radius: 5px;
