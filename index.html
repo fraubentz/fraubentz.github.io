@@ -1,77 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wolfram Florian Bentz</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <style>
-        body {
-            background-image: url('https://fraubentz.github.io/background.jpg');
-            background-size: cover;
-            background-position: center;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Landing Page</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body class="bg-gray-900 bg-opacity-100 text-gray-200">
-    <div class="container mx-auto p-4">
-        <!-- Navigation Panel -->
-        <nav class="bg-gray-800 bg-opacity-100 p-4 rounded-lg mb-4">
-            <ul class="flex space-x-4 justify-center">
-            </ul>
-        </nav>
-
-        <!-- Main Content -->
-        <div class="flex flex-col md:flex-row bg-white bg-opacity-100 shadow-md rounded-lg overflow-hidden">
-            <!-- Side Section -->
-            <div class="md:w-1/3 p-4 bg-gray-200 bg-opacity-100">
-                <div class="flex flex-col items-center">
-                    <img src="https://fraubentz.github.io/profile.jpg" alt="Profile Picture" class="w-32 h-32 rounded-full object-cover mb-4">
-                    <h2 class="text-xl font-semibold text-gray-900">Wolfram Florian Bentz</h2>
-                    <p class="text-gray-700">Professor Auxiliar</p>
-                    <p class="mt-4 text-gray-700">Universidade Aberta</p>
-                
-                
-                <center>
-                    <p class="mt-5 text-gray-700"><i>Departamento de Ciências e Tecnologia
-                    Seção de Matemática</i><br>
-                    Rua Almirante Barroso, n.º 38<br>
-                    1000-013 Lisboa, Portugal</p><br>
-                    <p><a href="mailto:wolfram.bentz@uab.pt" class="text-gray-500 hover:text-white-500">Wolfram [dot] Bentz [at] uab [dot] pt</a></p>
-                </center>
-                </div>
-            </div>
-            <!-- Main Section -->
-            <div class="md:w-2/3 p-4" id="about">
-                <h1 class="text-2xl font-bold mb-4 text-gray-900">About</h1>
-                <p class="mb-4 text-gray-800">
-                    I am Professor Auxiliar in Mathematics at <a href="https://paginapessoal.uab.pt/wbentz" class="underline text-decoration-style: dotted;">Universidade Aberta</a> and Integrated Member at <a href="https://novamath.fct.unl.pt/" class="underline text-decoration-style: dotted;">NOVA Math</a>. My research background is in the area of Universal Algebra and may be broadly described as studying algebraic structures to understand their complexity as well as their interaction with various non-algebraic subjects. These days, my interests are in Semigroup Theory, Group Theory, and Combinatorics.
-
-                </p>
-                <h2 class="text-xl font-semibold mb-2 text-gray-900" id="profiles">Academic Profiles</h2>
-                <ul class="list-disc list-inside text-gray-800">
-                    <li><a href="https://arxiv.org/search/?query=Wolfram+Bentz&searchtype=all&source=header" class="text-orange-500">ArXiv</a></li>
-                    <li><a href="https://orcid.org/0000-0003-0002-1277" class="text-orange-500">ORCID</a></li>
-                    <li><a href="https://mathscinet.ams.org/mathscinet/MRAuthorID/641226" class="text-orange-500">MathSciNet</a></li>
-                    <li><a href="https://www.researchgate.net/profile/Wolfram-Bentz" class="text-orange-500">ResearchGate</a></li>
-                    <li><a href="https://mathgenealogy.org/id.php?id=116441" class="text-orange-500">Mathematics Genealogy Project</a></li>
-                    <li><a href="https://cemat.tecnico.ulisboa.pt/member.php?project_id=7&member_id=68" class="text-orange-500">CEMAT</a></li>
-
-                </ul>
-                <br>
-                <h2 class="text-xl font-semibold mb-2 text-gray-900" id="research">Recent Research</h2>
-                <p class="mb-4 text-gray-800">
-                    Conjugacy in Semigroups: the Partition and Brauer Diagram Monoids, Conjugacy Growth, and Partial Inner Automorphisms
-                </p>
-            </div>
-        </div>
-        <!-- Footer -->
-        <footer class="mt-4 text-center text-orange font-bold">
-            &copy; <span id="current-year"></span> Wolfram Florian Bentz. All rights reserved.
-        </footer>
+<body class="bg-gray-100">
+  <div class="container mx-auto p-4 min-h-screen flex flex-col items-center justify-center">
+    <!-- Profile Section -->
+    <div class="bg-white shadow-lg rounded-lg p-6 text-center w-full md:w-1/2 lg:w-1/3">
+      <img src="path/to/your/profile.jpg" alt="Your Profile Picture" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-wine-600">
+      <h1 class="text-2xl font-bold text-wine-800">Your Name</h1>
+      <p class="text-gray-700 mt-2">A short bio about yourself goes here. You can mention your profession, interests, or any other details you'd like to share.</p>
+      <a href="https://www.linkedin.com/in/yourprofile" class="mt-4 inline-block bg-wine-600 text-white px-4 py-2 rounded-full hover:bg-wine-700 transition">Connect on LinkedIn</a>
     </div>
-    <script>
-        document.getElementById("current-year").textContent = new Date().getFullYear();
-    </script>
+  </div>
 </body>
 </html>
