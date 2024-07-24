@@ -39,7 +39,7 @@ body, html {
   width: 120px;
   height: 120px;
   border-radius: 50%; /* Makes the image circular */
-  border: 4px solid #800020; /* Maroon color */
+  border: 4px solid #4C4542; /* Maroon color */
   margin-bottom: 20px;
   object-fit: cover; /* Ensures the image covers the area without distortion */
 }
