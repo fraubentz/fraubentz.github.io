@@ -63,3 +63,15 @@ body, html {
 .linkedin-button:hover {
   background-color: #4b0026; /* Darker wine color on hover */
 }
+
+/* Footer styling */
+.footer {
+  text-align: center;
+  background-color: #800020; /* Maroon color */
+  color: #fff;
+  padding: 10px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+Explanation of the F
