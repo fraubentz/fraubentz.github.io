@@ -38,7 +38,7 @@ body, html {
 }
 
 .profile-picture {
-    max-width: 70%;
+    max-width: 60%;
     height: auto;
     border-radius: 50%;
     margin-bottom: 20px;
