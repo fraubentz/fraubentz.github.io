@@ -3,20 +3,187 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PY Liu, aka Frau Bentz</title>
-    <link rel="stylesheet" href="styles.css">
+    <!-- Authorship -->
+    <meta name="Poyi Liu" description="Website of Poyi Liu">
+    <title>Frau Poyi Liu Bentz</title>
+    <!-- Embedded CSS -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Lucida Sans, sans-serif;
+        }
+
+        body, html {}
+        
+        .background-image {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('background.jpeg');
+            background-size: cover;
+            background-position: center;
+            z-index: -1;
+        }
+
+        .column {
+            column-count: 2;
+            column-rule-style: solid;
+            column-rule-color:#555;
+            column-rule-width: 1px;
+            column-width: 50px;
+            height: 400px;
+            column-gap: 30px;
+        }
+
+        .intro {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 50px;
+            background-color: rgba(255, 255, 255, 0.6);
+            max-width: 600px;
+            margin: 50px auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-section {
+            text-align: center;
+        }
+
+        .profile-picture {
+            max-width: 60%;
+            height: auto;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+
+        .secondpart {
+            display: flex;
+            flex-direction: column;
+            align-items: left;
+            padding: 50px;
+            background-color: rgba(255, 255, 255, 0.6);
+            max-width: 600px;
+            margin: 60px auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .thirdpart {
+            display: flex;
+            flex-direction: column;
+            align-items: left;
+            padding: 50px;
+            background-color: rgba(255, 255, 255, 0.6);
+            max-width: 600px;
+            margin: 60px auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact {
+            display: flex;
+            flex-direction: column;
+            align-items: left;
+            padding: 50px;
+            background-color: rgba(255, 255, 255, 0.6);
+            max-width: 600px;
+            margin: 60px auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 4em;
+            margin-bottom: 10px;
+            color: #3b3b3b; 
+        }
+
+        h2 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: #636363;
+        }
+
+        h3 {
+            font-size: 1em;
+            font-family: 'Lucida Sans Unicode', sans-serif;
+            margin-bottom: 10px;
+            color: #3b3b3b;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.6)
+        }
+
+        footer p {
+            font-size: 0.8em;
+            color: #555;
+        }
+    </style>
 </head>
+
 <body>
+    <!-- Background Image -->
     <div class="background-image"></div>
-    <div class="main-content">
+    <!-- First Section -->
+    <div class="intro">
         <div class="profile-section">
             <img src="portraitpoyibentz.png" alt="Profile Picture" class="profile-picture">
             <h1>Poyi Liu</h1>
-            <p class="bio">Creatively solving problems.</p>
+            <h2>Frau.Bentz</h2>
+            <br><br>
+            <h3>Creatively solving problems.</h3>
         </div>
     </div>
+    <!-- Second Section -->
+    <div class="secondpart">
+        <h2>About.</h2>
+        <br>
+        <h3>
+            Hailing from Western Canada, I have two decades of experience working with non-profits, NGOs and institutions.
+            I specialise in communications, fundraising, organisational strategy and team management. 
+            <br><br>
+            I am currently based in Portugal.
+        </h3>
+    </div>
+
+    <!-- Third Section -->
+    <div class="thirdpart">
+        <h2>Current Projects.</h2>
+        <br>
+        <div class="column">
+            <h3>Example text from CBC to test columns: ...Tears welled in Tasha Porttin's eyes as she reminisced on the sheer beauty of the place she's called home for 10 years.
+                Jasper's mountain peaks and the picture-perfect pine trees that frame its vivid baby-blue lakes make it a popular tourist destination attracting millions each year. The natural beauty and small businesses, like the pharmacy she started, make the quaint alpine town in Canada’s Alberta province a jewel of the nation.
+                It's a "place that has the biggest heart of any community I've met", she said through tears. "It grabs people and never lets go."... </h3>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="contact">
+        <h2>Contact.</h2>
+        <br>
+        <h3>Email | LinkedIn | Discord | Google | WhatsApp</h3>
+    </div>
+
+    <!-- Bottom -->
     <footer>
-        <p>&copy; 2024 PY Liu. All rights reserved.</p>
+        <p><b>Coded with love by Poyi Liu</b></p>
+        <br>
+        <p> Copyright &copy <span id="current-year"></span> Poyi Liu. All rights reserved.</p>
     </footer>
+    <!-- Copyright Date Script -->
+    <script>
+        document.getElementById("current-year").textContent = new Date().getFullYear();
+    </script>
 </body>
+
 </html>
+
