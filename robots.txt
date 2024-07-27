@@ -55,5 +55,11 @@ Disallow: /
 User-agent: Timpibot
 Disallow: /
 
+User-agent: YandexBot
+Disallow: /
+
+User-agent: Baiduspider
+Disallow: /
+
 Sitemap: https://fraubentz.github.io/sitemap.xml
 
