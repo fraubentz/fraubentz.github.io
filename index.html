@@ -19,8 +19,10 @@
             font-family: Lucida Sans, sans-serif;
         }
 
-        body, html {}
-        
+        body, html {
+
+        }
+
         .background-image {
             position: fixed;
             top: 0;
@@ -30,6 +32,16 @@
             background-image: url('background.jpeg');
             background-size: cover;
             background-position: center;
+            z-index: -1;
+        }
+
+        .dark-mode {
+            background-color: black;
+            background-image: url('darkbackground.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
             z-index: -1;
         }
 
@@ -48,7 +60,7 @@
             flex-direction: column;
             align-items: center;
             padding: 50px;
-            background-color: rgba(255, 255, 255, 0.6);
+            background-color: rgba(255, 255, 255, 0.8);
             max-width: 600px;
             margin: 50px auto;
             border-radius: 10px;
@@ -71,7 +83,7 @@
             flex-direction: column;
             align-items: left;
             padding: 50px;
-            background-color: rgba(255, 255, 255, 0.6);
+            background-color: rgba(255, 255, 255, 0.8);
             max-width: 600px;
             margin: 60px auto;
             border-radius: 10px;
@@ -83,7 +95,7 @@
             flex-direction: column;
             align-items: left;
             padding: 50px;
-            background-color: rgba(255, 255, 255, 0.6);
+            background-color: rgba(255, 255, 255, 0.8);
             max-width: 600px;
             margin: 60px auto;
             border-radius: 10px;
@@ -95,7 +107,7 @@
             flex-direction: column;
             align-items: left;
             padding: 50px;
-            background-color: rgba(255, 255, 255, 0.6);
+            background-color: rgba(255, 255, 255, 0.8);
             max-width: 600px;
             margin: 60px auto;
             border-radius: 10px;
@@ -124,7 +136,7 @@
         footer {
             text-align: center;
             padding: 10px;
-            background-color: rgba(255, 255, 255, 0.6)
+            background-color: rgba(255, 255, 255, 0.8)
         }
 
         footer p {
@@ -145,6 +157,9 @@
             <h2>//Frau.Bentz</h2>
             <br><br>
             <h3>Creatively solving problems.</h3>
+            <br>
+            <!-- Dark Mode Button -->
+            <input type="button" id="btnBack" value="Dark/Light Mode"/>
         </div>
     </div>
     <!-- Second Section -->
@@ -192,6 +207,15 @@
         <br>
         <p> Copyright &copy <span id="current-year"></span> Poyi Liu. All rights reserved.</p>
     </footer>
+
+    <!-- Toggle Dark Mode -->
+    <script>
+        var btnBack = document.getElementById("btnBack");
+        btnBack.addEventListener('click', function() {
+            document.getElementsByClassName('background-image')[0].classList.toggle('dark-mode');
+        });
+    </script>
+
     <!-- Copyright Date Script -->
     <script>
         document.getElementById("current-year").textContent = new Date().getFullYear();
