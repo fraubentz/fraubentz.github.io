@@ -76,5 +76,5 @@ Disallow: /
 User-agent: YouBot
 Disallow: /
 
-Sitemap: https://fraubentz.github.io/sitemap.xml
+Sitemap: https://poyi.pages.dev/sitemap.xml
 
