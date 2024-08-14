@@ -5,8 +5,9 @@
     <meta name="robots" content="noarchive, nofollow, noai, noimageai">
     <!-- Responsive -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
     <!-- Authorship -->
-    <meta name="author" content="Poyi Liu">
+    <meta name="author" content="Poyi Liu | https://github.com/fraubentz">
     <meta name="image" content="portraitpoyibentz.png" description="Image in the likeness of Poyi Liu">
     <meta name="description" content="Website of Poyi Liu">
     <!-- Favicon -->
@@ -61,6 +62,14 @@
             vertical-align: middle;
         }
 
+        input{
+            transition: .5s;
+        }
+
+        input:hover {
+            transform: scale(1.2);
+        }
+
         .column {
             column-count: 2;
             column-rule-style: solid;
@@ -76,7 +85,7 @@
             flex-direction: column;
             align-items: center;
             padding: 50px;
-            background-color: rgba(255, 255, 255, 0.8);
+            background-color: rgba(255, 255, 255, 0.5);
             backdrop-filter: blur(2px);
             max-width: 600px;
             height: auto;
@@ -144,7 +153,7 @@
         h2 {
             font-size: 1.5em;
             margin-bottom: 10px;
-            color: #636363;
+            color: #3b3b3b;
         }
 
         h3 {
@@ -157,7 +166,7 @@
         footer {
             text-align: center;
             padding: 20px;
-            background-color: rgba(255, 255, 255, 0.9)
+            background-color: rgba(255, 255, 255)
         }
 
         footer p {
@@ -173,31 +182,26 @@
     <!-- First Section -->
     <div class="intro">
         <div class="profile-section">
+            <br>
             <img src="portraitpoyibentz.png" alt="Profile Picture" class="profile-picture">
             <h1>Poyi Liu</h1>
             <h2>//Frau.Bentz</h2>
             <br>
-            <h3><b>Creatively solving problems.</b></h3>
-            <br>
             <!-- Dark Mode Button -->
             <input type="button" id="btnBack" class="buttonimage" value=""/>
-            <br><br><br><br>
-            <h2>About</h2>
-            <br>
+            <br><br><br>
             <h3>
-            Hailing from Western Canada, Poyi has two decades of experience working with non-profits, NGOs and institutions.
-            She specialises in communications, fundraising, organisational strategy and team management. 
-            <br><br>
-            She is based in Portugal [hybrid/remote]
-            <br><br><br><br>
-            Email | Github
-
+            Email | Github | Codepen
             </h3>
+            <br><br><br><br><br>
         </div>
     </div>
 
     <!-- Bottom -->
     <footer>
+        <p><a href="http://www.w3.org/html/logo/" target="_blank" rel="noopener noreferrer">
+            <img style="float:right" src="https://www.w3.org/html/logo/badge/html5-badge-h-solo.png" width="63" height="64" alt="HTML5 Logo">
+        </a></p>
         <p><b>Coded with &#10084 by Poyi Liu</b></p>
         <br>
         <p> Copyright &copy <span id="current-year"></span> Poyi Liu. All rights reserved.</p>
