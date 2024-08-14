@@ -26,6 +26,27 @@
 
         }
 
+        /* -- Fonts --*/
+        h1 {
+            font-size: 4em;
+            margin-bottom: 10px;
+            color: #3b3b3b; 
+        }
+
+        h2 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: #3b3b3b;
+        }
+
+        h3 {
+            font-size: 1em;
+            font-family: 'Lucida Sans Unicode', sans-serif;
+            margin-bottom: 10px;
+            color: #3b3b3b;
+        }
+
+        /* -- Background --*/
         .background-image {
             position: fixed;
             top: 0;
@@ -48,11 +69,28 @@
             z-index: -1;
         }
 
-        input{
+        /* -- Hover Behaviour --*/
+        a { transition: .5s; }
+        a:link { color: rgb(56, 56, 56); text-decoration: none; font-weight: bold; }
+        a:visited { color: black; text-decoration: line-through; font-weight: bold; }
+        a:active { color: black; text-decoration: none; }
+        a:hover { color: rgb(244, 147, 37); font-size: x-large; transform: scale(1.2); }
+
+        input {
             transition: .5s;
         }
 
         input:hover {
+            transform: scale(1.2);
+        }
+
+        img {
+            aspect-ratio: 1;
+            cursor: pointer;
+            transition: .5s;
+        }
+
+        img:hover {
             transform: scale(1.2);
         }
 
@@ -66,6 +104,7 @@
             column-gap: 30px;
         }
 
+        /* -- Sections --*/
         .intro {
             display: flex;
             flex-direction: column;
@@ -104,51 +143,7 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
-        .thirdpart {
-            display: flex;
-            flex-direction: column;
-            align-items: left;
-            padding: 50px;
-            background-color: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(2px);
-            max-width: 600px;
-            margin: 60px auto;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .contact {
-            display: flex;
-            flex-direction: column;
-            align-items: left;
-            padding: 50px;
-            background-color: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(2px);
-            max-width: 600px;
-            margin: 60px auto;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        h1 {
-            font-size: 4em;
-            margin-bottom: 10px;
-            color: #3b3b3b; 
-        }
-
-        h2 {
-            font-size: 1.5em;
-            margin-bottom: 10px;
-            color: #3b3b3b;
-        }
-
-        h3 {
-            font-size: 1em;
-            font-family: 'Lucida Sans Unicode', sans-serif;
-            margin-bottom: 10px;
-            color: #3b3b3b;
-        }
-
+        /* -- Footer --*/
         footer {
             text-align: center;
             padding: 20px;
@@ -178,7 +173,7 @@
 
             <br><br><br>
             <h3>
-            Email | Github | Codepen
+            Email | <a href="https://github.com/fraubentz" target="_blank" rel="noopener noreferrer">GitHub</a> | Codepen
             </h3>
             <br><br><br><br><br>
         </div>
