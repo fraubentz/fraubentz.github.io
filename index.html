@@ -15,14 +15,21 @@
     <title>Poyi Liu</title>
     <!-- Embedded CSS -->
     <style>
-        * {
+        *,
+        *::before,
+        *::after {
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
+            box-sizing: inherit;
             font-family: Lucida Sans, sans-serif;
         }
 
-        body, html {
+        html {
+            box-sizing: border-box;
+        }
+
+        body {
+            display: block;
 
         }
 
@@ -70,11 +77,30 @@
         }
 
         /* -- Hover Behaviour --*/
-        a { transition: .5s; }
-        a:link { color: rgb(56, 56, 56); text-decoration: none; font-weight: bold; }
-        a:visited { color: black; text-decoration: line-through; font-weight: bold; }
-        a:active { color: black; text-decoration: none; }
-        a:hover { color: rgb(244, 147, 37); font-size: x-large; transform: scale(1.2); }
+        a { 
+            padding: 10px;
+            display: inline-block;
+            transition: .5s;
+        }
+        a:link {
+            color: rgb(56, 56, 56); 
+            text-decoration: none; 
+            font-weight: bold; 
+        }
+        a:visited { 
+            color: black; 
+            text-decoration: line-through; 
+            font-weight: bold; 
+        }
+        a:active { 
+            color: black; 
+            text-decoration: none; 
+        }
+        a:hover { 
+            color: rgb(244, 147, 37); 
+            font-size: x-large; 
+            transform: scale(1.2); 
+        }
 
         input {
             transition: .5s;
