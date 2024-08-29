@@ -31,7 +31,14 @@ h2 {
 
 h3 {
     font-size: 1em;
-    font-family: 'Lucida Sans Unicode', sans-serif;
+    font-family: monospace;
+    margin-bottom: 10px;
+    color: #3b3b3b;
+}
+
+h4 {
+    font-size: 1.5em;
+    font-family: monospace;
     margin-bottom: 10px;
     color: #3b3b3b;
 }
