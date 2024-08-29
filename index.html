@@ -13,212 +13,51 @@
     <!-- Favicon -->
     <link rel="icon" href="https://poyi.pages.dev/pyfavicon.jpg" type="image/x-icon">
     <title>Poyi Liu</title>
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
     <!-- Embedded CSS -->
-    <style>
-        *,
-        *::before,
-        *::after {
-            margin: 0;
-            padding: 0;
-            box-sizing: inherit;
-            font-family: Lucida Sans, sans-serif;
-        }
-
-        html {
-            box-sizing: border-box;
-        }
-
-        body {
-            display: block;
-
-        }
-
-        /* -- Fonts --*/
-        h1 {
-            font-size: 4em;
-            margin-bottom: 10px;
-            color: #3b3b3b; 
-        }
-
-        h2 {
-            font-size: 1.5em;
-            margin-bottom: 10px;
-            color: #3b3b3b;
-        }
-
-        h3 {
-            font-size: 1em;
-            font-family: 'Lucida Sans Unicode', sans-serif;
-            margin-bottom: 10px;
-            color: #3b3b3b;
-        }
-
-        /* -- Background --*/
-        .background-image {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('https://poyi.pages.dev/background.jpeg');
-            background-size: cover;
-            background-position: center;
-            z-index: -1;
-        }
-
-        .dark-mode {
-            background-color: black;
-            background-image: url('https://poyi.pages.dev/darkbackground.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            z-index: -1;
-        }
-
-        /* -- Hover Behaviour --*/
-        a:link {
-            color: rgb(56, 56, 56); 
-            text-decoration: none; 
-            font-weight: bold; 
-        }
-        a:visited { 
-            color: black; 
-            text-decoration: line-through; 
-            font-weight: bold; 
-        }
-        a:active { 
-            color: black; 
-            text-decoration: none; 
-        }
-        a:hover { 
-            color: rgb(244, 147, 37); 
-            font-size: x-large; 
-            transform: scale(1.2); 
-        }
-
-        .profile-section a { 
-            padding: 10px;
-            display: inline-block;
-            transition: .5s;
-        }
-
-        input {
-            transition: .5s;
-        }
-
-        input:hover {
-            transform: scale(1.2);
-        }
-
-        img {
-            aspect-ratio: 1;
-            cursor: pointer;
-            transition: .5s;
-        }
-
-        img:hover {
-            transform: scale(1.2);
-        }
-
-        .column {
-            column-count: 2;
-            column-rule-style: solid;
-            column-rule-color:#555;
-            column-rule-width: 1px;
-            column-width: 50px;
-            height: 400px;
-            column-gap: 30px;
-        }
-
-        /* -- Sections --*/
-        .intro {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 50px;
-            background-color: rgba(255, 255, 255, 0.5);
-            backdrop-filter: blur(2px);
-            max-width: 600px;
-            height: auto;
-            margin: 50px auto;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .profile-section {
-            text-align: center;
-        }
-
-        .profile-picture {
-            max-width: 70%;
-            height: auto;
-            border-radius: 50%;
-            margin-bottom: 20px;
-        }
-
-        .secondpart {
-            display: flex;
-            flex-direction: column;
-            align-items: left;
-            padding: 50px;
-            background-color: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(2px);
-            max-width: 600px;
-            margin: 60px auto;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        /* -- Footer --*/
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: rgba(255, 255, 255)
-        }
-
-        footer p {
-            font-size: 0.8em;
-            color: #555;
-        }
-    </style>
+    <style></style>
 </head>
 
 <body>
     <!-- Background Image -->
     <div class="background-image"></div>
-    <!-- First Section -->
-    <div class="intro">
-        <div class="profile-section">
-            <br>
-            <img src="https://poyi.pages.dev/portraitpoyibentz.png" alt="Profile Picture" class="profile-picture">
-            <h1>Poyi Liu</h1>
-            <h2>//Frau.Bentz</h2>
-            <br>
-            <!-- Dark Mode Button -->
-            <input type="image" src="https://poyi.pages.dev/darkmode.webp" width="60" height="60" alt="Dark-mode Button" id="btnBack">
-
-            <br><br><br>
-            <h3>
-                <a href="mailto:pybentz@duck.com">Email</a> | <a href="https://github.com/fraubentz" target="_blank" rel="noopener noreferrer">GitHub</a> | <a href="https://codepen.io/fraubentz" target="_blank" rel="noopener noreferrer">CodePen</a>
-            </h3>
-            <br><br><br><br><br>
+    <div class="whole-container">
+        <!-- Introduction -->
+        <div class="intro">
+            <div class="profile-section">
+                <img src="https://poyi.pages.dev/portraitpoyibentz.png" alt="Profile Picture" class="profile-picture">
+                <!-- Dark Mode Button -->
+                <input type="image" src="https://poyi.pages.dev/darkmode.webp" width="40" height="40" alt="Dark-mode Button" id="btnBack">
+            </div>
+            
+            <div class="introduction">
+                <h1>Poyi Liu</h1>
+                <h2>//Frau.Bentz</h2>
+                <br><br><br><br><br>
+                <h3>
+                    <a href="mailto:pybentz@duck.com">Email</a>  |  <a href="https://github.com/fraubentz" target="_blank" rel="noopener noreferrer">GitHub</a>  |  <a href="https://codepen.io/fraubentz" target="_blank" rel="noopener noreferrer">CodePen</a>
+                </h3>
+            </div>
         </div>
+
+            <!-- Bottom -->
+            <footer>
+                <p><a href="http://www.w3.org/html/logo/" target="_blank" rel="noopener noreferrer">
+                    <img style="float:right" src="https://www.w3.org/html/logo/badge/html5-badge-h-solo.png" width="63" height="64" alt="HTML5 Logo">
+                </a></p>
+                <p><b>Coded with &#10084 by Poyi Liu</b></p>
+                <br>
+                <p> Copyright &copy <span id="current-year"></span> Poyi Liu. All rights reserved.</p>
+            </footer>
+
     </div>
 
-    <!-- Bottom -->
-    <footer>
-        <p><a href="http://www.w3.org/html/logo/" target="_blank" rel="noopener noreferrer">
-            <img style="float:right" src="https://www.w3.org/html/logo/badge/html5-badge-h-solo.png" width="63" height="64" alt="HTML5 Logo">
-        </a></p>
-        <p><b>Coded with &#10084 by Poyi Liu</b></p>
-        <br>
-        <p> Copyright &copy <span id="current-year"></span> Poyi Liu. All rights reserved.</p>
-    </footer>
+
 
     <!-- Toggle Dark Mode -->
     <script>
-        var btnBack = document.getElementById("btnBack");
+        let btnBack = document.getElementById("btnBack");
         btnBack.addEventListener('click', function() {
             document.getElementsByClassName('background-image')[0].classList.toggle('dark-mode');
         });
