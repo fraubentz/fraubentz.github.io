@@ -119,8 +119,9 @@ img:hover {
 
 /* -- Content --*/
 .whole-container {
-    max-width: 800px;
+    max-width: 900px;
     margin: 100px auto;
+    border: 20px double black;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -166,7 +167,7 @@ img:hover {
 
 /* -- Footer --*/
 footer {
-    max-width: 800px;
+    max-width: 900px;
     padding: 20px;
     background-color: rgba(255, 255, 255)
 }
