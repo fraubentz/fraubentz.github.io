@@ -146,7 +146,7 @@ img:hover {
 }
 
 .profile-picture {
-    max-width: 200px;
+    max-width: 120%;
     height: auto;
     border-radius: 50%;
     margin-bottom: 20px;
