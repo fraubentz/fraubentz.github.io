@@ -85,7 +85,7 @@ a:active {
 }
 
 a:hover { 
-    color: rgb(244, 147, 37); 
+    color: rgb(37, 220, 244); 
     font-size: x-large; 
     transform: scale(1.2); 
     transition: .5s;
@@ -128,7 +128,7 @@ img:hover {
 .whole-container {
     max-width: 900px;
     margin: 100px auto;
-    border: 20px double black;
+    border: 20px double rgb(87, 87, 87);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
