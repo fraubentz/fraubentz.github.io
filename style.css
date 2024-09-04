@@ -133,12 +133,13 @@ img:hover {
 }
 
 .intro {
-    display: flex;
-    height: auto;
+    /* display: grid;
+    grid-template-columns: 1fr 2fr; */
+    /* height: auto; */
 }
 
 .profile-section {
-    flex: 1;
+    /* flex: 1; */
     padding: 50px;
     background-color: rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(2px);
@@ -146,7 +147,7 @@ img:hover {
 }
 
 .introduction {
-    flex: 2;
+    /* flex: 2; */
     padding: 50px;
     background-color: rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(2px);
@@ -154,7 +155,7 @@ img:hover {
 }
 
 .profile-picture {
-    max-width: 70%;
+    max-width: 60%;
     height: auto;
     border-radius: 50%;
     margin-bottom: 20px;
@@ -162,7 +163,7 @@ img:hover {
 
 /* Media Queries */
 
-@media only screen and (max-width: 600px) {
+/* @media only screen and (max-width: 600px) {
     .intro {
         flex-direction: column;
     }
@@ -170,7 +171,7 @@ img:hover {
     .introduction {
         text-align: center;
     }
-}
+} */
 
 /* -- Footer --*/
 footer {
