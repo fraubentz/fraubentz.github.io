@@ -16,34 +16,34 @@ body {
     
 }
 
-/* -- Fonts --*/
+/* Fonts */
 h1 {
-    font-size: 4em;
-    margin-bottom: 10px;
+    font-size: 4rem;
+    margin-bottom: 5px;
     color: #3b3b3b; 
 }
 
 h2 {
-    font-size: 1.5em;
-    margin-bottom: 10px;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
     color: #3b3b3b;
 }
 
 h3 {
-    font-size: 1em;
+    font-size: 1.2rem;
     font-family: monospace;
     margin-bottom: 10px;
     color: #3b3b3b;
 }
 
 h4 {
-    font-size: 1.5em;
+    font-size: 1.1rem;
     font-family: monospace;
     margin-bottom: 10px;
     color: #3b3b3b;
 }
 
-/* -- Background --*/
+/* Background */
 .background-image {
     position: fixed;
     top: 0;
@@ -66,7 +66,7 @@ h4 {
     z-index: -1;
 }
 
-/* -- Hover Behaviour --*/
+/* Hover Behaviour */
 a:link {
     color: rgb(56, 56, 56); 
     text-decoration: none; 
@@ -86,14 +86,26 @@ a:active {
 
 a:hover { 
     color: rgb(37, 220, 244); 
-    font-size: x-large; 
-    transform: scale(1.2); 
     transition: .5s;
 }
 
-.introduction a { 
-    padding: 20px;
-    display: inline-block;
+nav a:hover .navbutton {
+    background-color:rgb(37, 220, 244);
+    color: #3b3b3b;
+    padding: 10px;
+    border-radius: 10px; 
+}
+
+.social a {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.social a:hover { 
+    color: rgb(37, 220, 244); 
+    font-size: x-large; 
+    transform: scale(1.2); 
+    transition: .5s;
 }
 
 input {
@@ -114,66 +126,60 @@ img:hover {
     transform: scale(1.5);
 }
 
-.column {
-    column-count: 2;
-    column-rule-style: solid;
-    column-rule-color:#555;
-    column-rule-width: 1px;
-    column-width: 50px;
-    height: 400px;
-    column-gap: 30px;
-}
-
-/* -- Content --*/
+/* Content */
 .whole-container {
+    display: flex;
+    flex-direction: column;
     max-width: 900px;
     margin: 100px auto;
     border: 20px double rgb(87, 87, 87);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.intro {
-    /* display: grid;
-    grid-template-columns: 1fr 2fr; */
-    /* height: auto; */
-}
-
-.profile-section {
-    /* flex: 1; */
-    padding: 50px;
-    background-color: rgba(255, 255, 255, 0.5);
-    backdrop-filter: blur(2px);
-    text-align: center;
+nav {
+    display:flex;
+    margin-bottom: 100px;
 }
 
 .introduction {
-    /* flex: 2; */
     padding: 50px;
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.6);
     backdrop-filter: blur(2px);
-    
 }
 
-.profile-picture {
-    max-width: 60%;
+/* Buttons */
+.navbutton {
+    background-color:#3b3b3b;
+    color: antiquewhite;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+/* Code block */
+.code-block {
+    padding: 10px;
+    width: 100%;
     height: auto;
-    border-radius: 50%;
-    margin-bottom: 20px;
+    background-color: black;
+    color: antiquewhite;
+    font-family: monospace;
+    font-size: 1rem;
+    white-space: pre-wrap;
 }
 
-/* Media Queries */
+.pgp {
+    font-size: 0.4rem;
+}
 
-/* @media only screen and (max-width: 600px) {
-    .intro {
-        flex-direction: column;
-    }
+/* Socials */
+.social {
+    margin-bottom: 20px;
+    text-align: center;
+}
 
-    .introduction {
-        text-align: center;
-    }
-} */
-
-/* -- Footer --*/
+/* Footer */
 footer {
     max-width: 900px;
     padding: 20px;
@@ -181,7 +187,15 @@ footer {
 }
 
 footer p {
-    font-size: 0.8em;
+    font-size: 0.8rem;
     color: #555;
     text-align: center;
+}
+
+/* Media queries */
+@media only screen and (max-width: 600px) {
+    nav {
+        flex-direction: column;
+        gap: 5px;
+    }
 }

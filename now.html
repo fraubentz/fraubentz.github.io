@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="noarchive, nofollow, noai, noimageai">
+    <!-- Responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- Authorship -->
+    <meta name="author" content="Poyi Liu | https://github.com/fraubentz">
+    <meta name="image" content="img/portraitpoyibentz.png" description="Cartoon image of Poyi Liu">
+    <meta name="description" content="Website of Poyi Liu">
+    <!-- Favicon -->
+    <link rel="icon" href="img/pyfavicon.jpg" type="image/x-icon">
+    <title>PY Liu</title>
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/bd55b975a2.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- Background Image -->
+    <div class="background-image"></div>
+    <div class="whole-container">
+        <!-- Introduction -->    
+        <div class="introduction">
+            <h1>PY Liu     <input type="image" src="img/darkmode.webp" width="40" height="40" alt="Dark-mode Button" id="btnBack"></h1>
+            <h2>//now</h2>
+            <nav>
+                <a href="index.html"><div class="navbutton">_home</div></a>
+                <a href="about.html"><div class="navbutton">_about</div></a>
+                <a href="now.html"><div class="navbutton">_now</div></a>
+                <a href="nbook.html"><div class="navbutton">_notebook</div></a>
+                <a href="contact.html"><div class="navbutton">_contact</div></a>
+            </nav>
+            <div class="code-block">
+present {
+
+    memory.log("Continue learning European Portuguese");
+    memory.log("Playing cavaquinho in the local community");
+    memory.log("Learning traditional Portuguese folk music");
+    memory.log("Assisting scientists");
+    memory.log("Deepening my programming and mathematical skills");
+    memory.log("Picking up TypeScript, jQuery, React and SageMath");
+
+}
+
+date = 09/2024
+            </div>
+        </div>
+
+        <footer>
+            <p><a href="http://www.w3.org/html/logo/" target="_blank" rel="noopener noreferrer">
+                <img style="float:right" src="https://www.w3.org/html/logo/badge/html5-badge-h-solo.png" width="63" height="64" alt="HTML5 Logo">
+            </a></p>
+            <div class="social">
+                <a href="mailto:pybentz@duck.com"><img src="img/email.svg" width="20" height="20" alt="Email Icon"></a>
+                <a href="https://github.com/fraubentz" target="_blank" rel="noopener noreferrer"><img src="img/github-octocat.svg" width="20" height="20" alt="GitHub Icon"></a>    
+                <a href="https://codepen.io/fraubentz" target="_blank" rel="noopener noreferrer"><img src="img/codepen-icon.svg" width="20" height="20" alt="CodePen Icon"></a>
+            </div>
+            <p><b>Coded with &#10084 by Yours Truly</b></p>
+            <p> </p>
+            <p> Copyright &copy <span id="current-year"></span> Poyi Liu. All rights reserved.</p>
+        </footer>
+    </div>
+
+
+
+    <!-- Toggle Dark Mode -->
+    <script>
+        let btnBack = document.getElementById("btnBack");
+        btnBack.addEventListener('click', function() {
+            document.getElementsByClassName('background-image')[0].classList.toggle('dark-mode');
+        });
+    </script>
+
+    <!-- Copyright Date Script -->
+    <script>
+        document.getElementById("current-year").textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>
