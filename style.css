@@ -56,19 +56,19 @@ h4 {
 
 /* Hover Behaviour */
 a:link {
-    color: rgb(56, 56, 56); 
+    color: rgb(173, 172, 172); 
     text-decoration: none; 
     font-weight: bold; 
 }
 
 a:visited { 
-    color: black; 
+    color: rgb(173, 172, 172); 
     text-decoration: line-through; 
     font-weight: bold; 
 }
 
 a:active { 
-    color: black; 
+    color: rgb(173, 172, 172); 
     text-decoration: none; 
 }
 
@@ -131,8 +131,8 @@ nav {
 
 main {
     padding: 50px;
-    background-color: rgba(255, 255, 255, 0.6);
-    backdrop-filter: blur(2px);
+    background-color: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(3px);
 }
 
 /* Buttons */
@@ -146,12 +146,14 @@ main {
 }
 
 .txtbutton {
+    display: inline-block;
     background-color: #a8a8a8;
     color: antiquewhite;
-    margin-left: 5px;
-    margin-right: 5px;
-    padding: 5px 10px;
+    margin: 1px 3px;
+    padding: 0px 10px;
     border-radius: 10px;
+    font-family: monospace;
+    font-size: 1rem;
 }
 
 .colophon-button {
