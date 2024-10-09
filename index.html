@@ -24,7 +24,7 @@
 <body>
     <div class="whole-container">   
         <main>
-            <h1>PY Liu     <input type="image" src="img/darkmode.webp" width="40" height="40" alt="Dark-mode Button" id="btnBack"></h1>
+            <h1>PY Liu     <input type="image" src="img/darkmode.webp" width="40" height="40" alt="Dark-mode Button"></h1>
             <h2>//frau.Bentz</h2>
             <nav>
                 <a href="index.html"><div class="navbutton">_home</div></a>
@@ -53,8 +53,8 @@
 
     <!-- Toggle Dark Mode -->
     <script>
-        let btnBack = document.getElementById("btnBack");
-        btnBack.addEventListener('click', function() {
+        let btnBack = document.querySelector("input");
+        btnBack.addEventListener('click', () => {
             document.body.classList.toggle('dark-mode');
         });
     </script>
