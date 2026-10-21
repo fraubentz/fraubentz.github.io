@@ -2,7 +2,6 @@ const repoList = document.getElementById("repo-list");
 const searchInput = document.getElementById("repo-search");
 const repoTemplate = document.getElementById("repo-template");
 const yearNode = document.getElementById("year");
-const emailButton = document.getElementById("emailButton");
 
 const featuredRepoOrder = [
   "gap-online",
@@ -23,6 +22,7 @@ if (yearNode) {
 }
 
 const emailAddress = atob("cHliZW56QGR1Y2suY29t");
+const emailButton = document.getElementById("emailButton");
 
 if (emailButton) {
   emailButton.addEventListener("click", () => {
