@@ -1,132 +1,541 @@
-const repoList = document.getElementById("repo-list");
-const searchInput = document.getElementById("repo-search");
-const repoTemplate = document.getElementById("repo-template");
-const yearNode = document.getElementById("year");
-
-const featuredRepoOrder = [
-  "gap-online",
-  "cavaquinho",
-  "der-kuesten-kurier",
-  "hubbys_geschenk",
-  "cat-conference",
-  "dicionario_cavaquinho",
-  "simple-landing-page",
-  "javascript-exercises",
-  "sketchpad",
-  "css-exercises",
-  "odin-recipes"
-];
-
-if (yearNode) {
-  yearNode.textContent = new Date().getFullYear();
+* {
+  box-sizing: border-box;
 }
 
-const emailAddress = atob("cHliZW56QGR1Y2suY29t");
-const emailButton = document.getElementById("emailButton");
-
-if (emailButton) {
-  emailButton.addEventListener("click", () => {
-    window.location.href = `mailto:${emailAddress}`;
-  });
+:root {
+  --bg: #0f0d0b;
+  --bg-alt: #1b1713;
+  --panel: rgba(255, 248, 239, 0.03);
+  --panel-strong: rgba(255, 248, 239, 0.05);
+  --border: rgba(200, 150, 84, 0.38);
+  --border-strong: rgba(215, 155, 58, 0.8);
+  --text: #f6efe3;
+  --muted: #d7c2a0;
+  --soft: #b69b78;
+  --accent: #d79b3a;
+  --accent-strong: #c86d2a;
+  --accent-soft: rgba(215, 155, 58, 0.18);
+  --shadow: rgba(10, 7, 4, 0.8);
+  --button-dark: #17130f;
+  --button-light: #f6efe3;
+  --button-text: #0d0b09;
 }
 
-async function loadRepos() {
-  try {
-    const [userResponse, orgResponse] = await Promise.all([
-      fetch("https://api.github.com/users/fraubentz/repos?sort=updated&per_page=100"),
-      fetch("https://api.github.com/orgs/BentzStudio/repos?sort=updated&per_page=100")
-    ]);
+html {
+  scroll-behavior: smooth;
+}
 
-    if (!userResponse.ok && !orgResponse.ok) {
-      throw new Error("Unable to fetch repositories");
-    }
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "SF Pro Display", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.6;
+  color: var(--text);
+  background:
+    radial-gradient(circle at top, rgba(215, 155, 58, 0.12), transparent 24%),
+    radial-gradient(circle at bottom right, rgba(200, 109, 42, 0.12), transparent 20%),
+    var(--bg);
+}
 
-    const userRepos = userResponse.ok ? await userResponse.json() : [];
-    const orgRepos = orgResponse.ok ? await orgResponse.json() : [];
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px);
+  background-size: 22px 22px;
+  mask-image: radial-gradient(circle at center, black 38%, transparent 100%);
+  pointer-events: none;
+}
 
-    const combined = [...userRepos, ...orgRepos].reduce((acc, repo) => {
-      const key = repo.full_name || repo.name;
-      if (!acc.has(key)) {
-        acc.set(key, repo);
-      }
-      return acc;
-    }, new Map());
+img {
+  max-width: 100%;
+  display: block;
+}
 
-    const filtered = [...combined.values()]
-      .filter((repo) => !repo.fork && !repo.private)
-      .filter((repo) => !["fraubentz", "fraubentz.github.io"].includes(repo.name))
-      .map((repo) => {
-        const index = featuredRepoOrder.indexOf(repo.name);
-        return {
-          ...repo,
-          featuredRank: index === -1 ? Number.MAX_SAFE_INTEGER : index
-        };
-      })
-      .sort((a, b) => {
-        const rankDiff = a.featuredRank - b.featuredRank;
-        if (rankDiff !== 0) return rankDiff;
-        return (b.stargazers_count || 0) - (a.stargazers_count || 0);
-      });
+a {
+  color: inherit;
+  text-decoration: none;
+}
 
-    renderRepos(filtered);
+button,
+input {
+  font: inherit;
+}
 
-    if (searchInput) {
-      searchInput.addEventListener("input", (event) => {
-        const query = event.target.value.trim().toLowerCase();
+p,
+ul,
+h1,
+h2,
+h3 {
+  margin-top: 0;
+}
 
-        const matches = filtered.filter((repo) => {
-          const haystack = `${repo.name} ${repo.full_name || ""} ${repo.description || ""} ${repo.language || ""}`.toLowerCase();
-          return haystack.includes(query);
-        });
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  padding: 0.75rem 1rem;
+  z-index: 1000;
+  background: var(--accent);
+  color: #1a120d;
+  font-weight: 700;
+}
 
-        renderRepos(matches);
-      });
-    }
-  } catch (error) {
-    console.error(error);
-    if (repoList) {
-      repoList.innerHTML = '<p class="empty-state">Repository data is unavailable right now.</p>';
-    }
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+}
+
+.frame-shell {
+  width: min(1100px, calc(100% - 1.5rem));
+  margin: 1.25rem auto 2rem;
+  border: 1px solid var(--border);
+  background: rgba(22, 18, 15, 0.82);
+  box-shadow: 0 30px 90px var(--shadow);
+  backdrop-filter: blur(8px);
+}
+
+.container {
+  width: min(1000px, calc(100% - 2rem));
+  margin: 0 auto;
+}
+
+.site-header {
+  border-bottom: 1px solid var(--border);
+  background: rgba(17, 12, 9, 0.9);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 78px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+}
+
+.brand-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.4rem;
+  min-height: 2.4rem;
+  padding: 0.25rem 0.5rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: rgba(215, 155, 58, 0.12);
+  color: var(--accent);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: -0.08em;
+  font-family: "SFMono-Regular", "Consolas", "Liberation Mono", monospace;
+}
+
+.brand-text {
+  font-size: 1.08rem;
+  color: var(--text);
+}
+
+.nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.nav-list a {
+  color: var(--muted);
+  font-family: "SFMono-Regular", "Consolas", "Liberation Mono", monospace;
+  font-size: 0.9rem;
+  text-transform: lowercase;
+  transition: color 0.2s ease;
+}
+
+.nav-list a:hover,
+.nav-list a:focus-visible {
+  color: var(--text);
+}
+
+.section {
+  padding: 4rem 0;
+}
+
+.hero {
+  padding-top: 5rem;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(260px, 0.7fr);
+  align-items: center;
+  gap: 2rem;
+}
+
+.eyebrow {
+  margin-bottom: 0.9rem;
+  color: var(--accent);
+  text-transform: lowercase;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  font-size: 0.74rem;
+  font-family: "SFMono-Regular", "Consolas", "Liberation Mono", monospace;
+}
+
+h1 {
+  margin-bottom: 0.75rem;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.8rem, 6vw, 5rem);
+  line-height: 0.94;
+  letter-spacing: -0.05em;
+  color: var(--text);
+}
+
+.hero-tag {
+  margin-bottom: 1rem;
+  color: var(--soft);
+  font-family: "SFMono-Regular", "Consolas", "Liberation Mono", monospace;
+  font-size: 0.9rem;
+}
+
+.lede {
+  max-width: 60ch;
+  color: var(--muted);
+  font-size: 1.08rem;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 2rem;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 47px;
+  padding: 0.8rem 1.2rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--button-dark);
+  color: var(--text);
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.button:hover,
+.button:focus-visible {
+  transform: translateY(-1px);
+  border-color: var(--border-strong);
+  box-shadow: 0 0 0 3px rgba(215, 155, 58, 0.12);
+}
+
+.button.primary {
+  background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+  color: #1c120d;
+  border-color: transparent;
+}
+
+.meta-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0 0;
+}
+
+.meta-list li {
+  padding: 0.55rem 0.8rem;
+  background: rgba(255, 248, 239, 0.02);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.profile-card {
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.035), rgba(255,255,255,0.015));
+  box-shadow: 0 18px 48px rgba(0,0,0,0.25);
+  overflow: hidden;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.9rem 1rem;
+  border-bottom: 1px solid var(--border);
+  color: var(--muted);
+  font-family: "SFMono-Regular", "Consolas", "Liberation Mono", monospace;
+  font-size: 0.8rem;
+}
+
+.status-dot {
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 50%;
+  background: #d59a42;
+  box-shadow: 0 0 12px rgba(213, 154, 66, 0.8);
+}
+
+.profile-body {
+  padding: 1.2rem 1.1rem 1.3rem;
+}
+
+.label {
+  margin-bottom: 0.6rem;
+  color: var(--soft);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.72rem;
+  font-family: "SFMono-Regular", "Consolas", "Liberation Mono", monospace;
+}
+
+.profile-body h2 {
+  margin-bottom: 1rem;
+  font-size: clamp(1.4rem, 2vw, 2rem);
+  line-height: 1.2;
+  letter-spacing: -0.04em;
+}
+
+.profile-body ul {
+  margin: 0;
+  padding-left: 1.2rem;
+  color: var(--muted);
+}
+
+.section-alt {
+  background: rgba(255,255,255,0.015);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.section-heading {
+  margin-bottom: 1.5rem;
+}
+
+.section-heading h2 {
+  margin-bottom: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.9rem, 3vw, 2.8rem);
+  letter-spacing: -0.04em;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem;
+  color: var(--muted);
+  font-size: 1.04rem;
+}
+
+.projects-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.search-field {
+  display: block;
+  width: min(100%, 360px);
+}
+
+.search-field input {
+  width: 100%;
+  min-height: 48px;
+  padding: 0.8rem 0.9rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: rgba(255,255,255,0.02);
+  color: var(--text);
+}
+
+.search-field input::placeholder {
+  color: var(--soft);
+}
+
+.search-field input:focus-visible,
+.button:focus-visible,
+.repo-link:focus-visible,
+.nav-list a:focus-visible,
+.brand:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.repo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+.repo-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  min-height: 220px;
+  padding: 1.1rem;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: rgba(255,255,255,0.02);
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.repo-card:hover,
+.repo-card:focus-within {
+  border-color: var(--border-strong);
+  transform: translateY(-2px);
+}
+
+.repo-topline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.repo-name {
+  margin: 0;
+  font-size: 1.1rem;
+  letter-spacing: -0.04em;
+  word-break: break-word;
+}
+
+.repo-language {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 28px;
+  padding: 0.3rem 0.6rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-family: "SFMono-Regular", "Consolas", "Liberation Mono", monospace;
+}
+
+.repo-description {
+  flex: 1;
+  margin: 0;
+  color: var(--muted);
+}
+
+.repo-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  color: var(--soft);
+  font-size: 0.85rem;
+  font-family: "SFMono-Regular", "Consolas", "Liberation Mono", monospace;
+}
+
+.repo-link {
+  margin-top: auto;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 1.2rem 0 2rem;
+}
+
+.footer-inner {
+  text-align: center;
+  color: var(--muted);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.empty-state {
+  color: var(--muted);
+  border: 1px dashed var(--border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  background: rgba(255,255,255,0.02);
+}
+
+@media (max-width: 800px) {
+  .hero-grid,
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .projects-header {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
 
-function renderRepos(repos) {
-  if (!repoList) return;
-
-  repoList.innerHTML = "";
-
-  if (!repos.length) {
-    repoList.innerHTML = '<p class="empty-state">No repositories match your search.</p>';
-    return;
+@media (max-width: 560px) {
+  .frame-shell {
+    width: min(100%, calc(100% - 0.8rem));
+    margin-top: 0.6rem;
   }
 
-  repos.forEach((repo) => {
-    const fragment = repoTemplate.content.cloneNode(true);
-    const name = fragment.querySelector(".repo-name");
-    const description = fragment.querySelector(".repo-description");
-    const language = fragment.querySelector(".repo-language");
-    const stars = fragment.querySelector(".repo-stars");
-    const forks = fragment.querySelector(".repo-forks");
-    const link = fragment.querySelector(".repo-link");
+  .header-inner {
+    flex-direction: column;
+    justify-content: center;
+    padding: 0.8rem 0;
+  }
 
-    name.textContent = repo.name;
-    description.textContent = repo.description || "No description provided.";
-    language.textContent = repo.language || "Misc";
-    stars.textContent = `★ ${formatNumber(repo.stargazers_count || 0)}`;
-    forks.textContent = `⎇ ${formatNumber(repo.forks_count || 0)}`;
+  .nav-list {
+    justify-content: center;
+  }
 
-    link.href = repo.html_url;
-    link.setAttribute("aria-label", `Open repository ${repo.name}`);
+  .section {
+    padding: 3rem 0;
+  }
 
-    repoList.appendChild(fragment);
-  });
+  .hero {
+    padding-top: 3rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+  }
+
+  .button {
+    width: 100%;
+  }
 }
 
-function formatNumber(value) {
-  return new Intl.NumberFormat("en-US", {
-    notation: value >= 1000 ? "compact" : "standard",
-    maximumFractionDigits: 1,
-  }).format(value);
-}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 
-loadRepos();
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

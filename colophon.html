@@ -3,11 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0f0d0b" />
     <meta name="robots" content="noarchive, noindex, nofollow, noai, noimageai" />
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; script-src 'self'; form-action 'self' mailto:;" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https://github.githubassets.com; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src https://api.github.com; base-uri 'self'; form-action 'self' mailto:; frame-ancestors 'none';" />
     <meta http-equiv="X-Content-Type-Options" content="nosniff" />
-    <meta name="description" content="Colophon for the fraubentz website." />
-    <title>fraubentz — colophon</title>
+    <meta http-equiv="Referrer-Policy" content="no-referrer" />
+    <meta name="description" content="Digital portfolio and GitHub landing page for fraubentz." />
+    <link rel="icon" href="https://github.githubassets.com/favicons/favicon-dark.svg" type="image/svg+xml" />
+    <title>fraubentz</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -16,14 +19,15 @@
     <div class="frame-shell">
       <header class="site-header">
         <div class="container header-inner">
-          <a class="brand" href="index.html" aria-label="fraubentz home">
-            <span class="brand-mark" aria-hidden="true">F</span>
+          <a class="brand" href="#top" aria-label="fraubentz home">
+            <span class="brand-mark" aria-hidden="true">PY</span>
             <span class="brand-text">fraubentz</span>
           </a>
 
           <nav aria-label="Main navigation">
             <ul class="nav-list">
-              <li><a href="index.html">_home</a></li>
+              <li><a href="#about">_about</a></li>
+              <li><a href="#projects">_projects</a></li>
               <li><a href="colophon.html">_colophon</a></li>
             </ul>
           </nav>
@@ -31,55 +35,117 @@
       </header>
 
       <main id="main-content">
-        <section class="section">
+        <section class="hero section">
+          <div class="container hero-grid">
+            <div class="hero-copy">
+              <p class="eyebrow">digital wunderkammer</p>
+              <h1>PY</h1>
+              <p class="hero-tag">// curious builder / browser tinkerer / static web craftsman</p>
+
+              <p class="lede">
+                I build small but meaningful web projects, experiments, and handcrafted interfaces that
+                are intentionally readable, lightweight, and human-centred.
+              </p>
+
+              <div class="hero-actions">
+                <a class="button primary" href="#projects">View projects</a>
+                <button id="emailButton" class="button secondary" type="button" aria-label="Reveal email address">
+                  Reveal email
+                </button>
+              </div>
+
+              <ul class="meta-list" aria-label="Highlights">
+                <li>hand-crafted</li>
+                <li>mobile-first</li>
+                <li>accessible</li>
+              </ul>
+            </div>
+
+            <aside class="profile-card" aria-label="Profile summary">
+              <div class="card-header">
+                <span class="status-dot" aria-hidden="true"></span>
+                <span>active online</span>
+              </div>
+
+              <div class="profile-body">
+                <p class="label">Focus</p>
+                <h2>Front-end craft, experiments, and practical web tooling.</h2>
+                <ul>
+                  <li>HTML, CSS, JavaScript</li>
+                  <li>Responsive interfaces</li>
+                  <li>Privacy-conscious design</li>
+                </ul>
+              </div>
+            </aside>
+          </div>
+        </section>
+
+        <section id="about" class="section section-alt">
           <div class="container">
-            <p class="eyebrow">_colophon</p>
-            <h1>Colophon</h1>
+            <div class="section-heading">
+              <p class="eyebrow">_about</p>
+              <h2>Curious, hands-on, and focused on usable design.</h2>
+            </div>
 
             <div class="about-grid">
-              <div>
-                <p>
-                  This site is assembled as a handcrafted static site using semantic HTML, modern CSS,
-                  and JavaScript, with some AI-assisted iteration during the build process. It is designed
-                  to remain lightweight, readable, and maintainable without a framework or dependency stack.
-                </p>
-                <p>
-                  The source is hosted in a public repository and remains open for inspection, but the site
-                  is designed to respect privacy and reduce unnecessary tracking or data leakage.
-                </p>
-              </div>
-
-              <div>
-                <p>
-                  The following priorities guide the work:
-                </p>
-                <ol class="priority-list">
-                  <li>Accessibility</li>
-                  <li>Mobile-first design principles</li>
-                  <li>Security and privacy</li>
-                  <li>Carbon footprint reduction</li>
-                  <li>Speed and energy efficiency</li>
-                </ol>
-              </div>
-            </div>
-
-            <div class="meta-panel">
               <p>
-                This site does not use analytics, cookies, trackers, or third-party advertising scripts.
-                It does not expose email addresses in plain text in the HTML source, and it avoids web-crawler
-                friendliness where possible.
+                Hello! My name is Poyi (PY). My background is in History, as well as Management. For over two decades, I have worked
+                with Not-for-Profits, NGOs, and other organisations.
+                Currently, I reside in Portugal with my husband and regularly perform traditional Portuguese folk music with groups in the community.
+              </p>
+              <p>
+                My work in the digital world sits between experimentation and practical design: web pages, little tools,
+                playful interfaces, and projects that are built to be useful, readable, and easy to explore.
+                This place is a small archive of what I am learning, making, and revisiting — a digital
+                cabinet of experiments, ideas, and public code.
               </p>
             </div>
+          </div>
+        </section>
+
+        <section id="projects" class="section section-alt projects-section">
+          <div class="container">
+            <div class="projects-header">
+              <div>
+                <p class="eyebrow">_projects</p>
+                <h2>Public repositories</h2>
+              </div>
+
+              <label class="search-field" for="repo-search">
+                <span class="sr-only">Filter repositories</span>
+                <input id="repo-search" type="search" placeholder="Filter by name or language" aria-label="Filter repositories" />
+              </label>
+            </div>
+
+            <div id="repo-list" class="repo-grid" aria-live="polite"></div>
           </div>
         </section>
       </main>
 
       <footer class="site-footer">
         <div class="container footer-inner">
-          <p>Designed and maintained by PY, aka fraubentz</p>
+          <p><span id="year"></span> · PY, aka fraubentz</p>
         </div>
       </footer>
     </div>
+
+    <template id="repo-template">
+      <article class="repo-card">
+        <div class="repo-topline">
+          <h3 class="repo-name"></h3>
+          <span class="repo-language"></span>
+        </div>
+
+        <p class="repo-description"></p>
+
+        <div class="repo-meta" aria-label="Repository statistics">
+          <span class="repo-stars">★ 0</span>
+          <span class="repo-forks">⎇ 0</span>
+        </div>
+
+        <a class="repo-link" href="#" target="_blank" rel="noreferrer">Open repository</a>
+      </article>
+    </template>
 
     <script src="script.js"></script>
   </body>
