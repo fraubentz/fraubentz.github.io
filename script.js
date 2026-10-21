@@ -5,6 +5,7 @@ const yearNode = document.getElementById("year");
 const emailButton = document.getElementById("emailButton");
 
 const featuredRepoOrder = [
+  "gap-online",
   "cavaquinho",
   "der-kuesten-kurier",
   "hubbys_geschenk",
@@ -31,15 +32,27 @@ if (emailButton) {
 
 async function loadRepos() {
   try {
-    const response = await fetch("https://api.github.com/users/fraubentz/repos?sort=updated&per_page=100");
+    const [userResponse, orgResponse] = await Promise.all([
+      fetch("https://api.github.com/users/fraubentz/repos?sort=updated&per_page=100"),
+      fetch("https://api.github.com/orgs/BentzStudio/repos?sort=updated&per_page=100")
+    ]);
 
-    if (!response.ok) {
+    if (!userResponse.ok && !orgResponse.ok) {
       throw new Error("Unable to fetch repositories");
     }
 
-    const repos = await response.json();
+    const userRepos = userResponse.ok ? await userResponse.json() : [];
+    const orgRepos = orgResponse.ok ? await orgResponse.json() : [];
 
-    const filtered = repos
+    const combined = [...userRepos, ...orgRepos].reduce((acc, repo) => {
+      const key = repo.full_name || repo.name;
+      if (!acc.has(key)) {
+        acc.set(key, repo);
+      }
+      return acc;
+    }, new Map());
+
+    const filtered = [...combined.values()]
       .filter((repo) => !repo.fork && !repo.private)
       .filter((repo) => !["fraubentz", "fraubentz.github.io"].includes(repo.name))
       .map((repo) => {
@@ -62,7 +75,7 @@ async function loadRepos() {
         const query = event.target.value.trim().toLowerCase();
 
         const matches = filtered.filter((repo) => {
-          const haystack = `${repo.name} ${repo.description || ""} ${repo.language || ""}`.toLowerCase();
+          const haystack = `${repo.name} ${repo.full_name || ""} ${repo.description || ""} ${repo.language || ""}`.toLowerCase();
           return haystack.includes(query);
         });
 
