@@ -1,67 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <!-- Responsive -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="mobile-web-app-capable" content="yes">
-    <!-- Security -->
-    <meta name="robots" content="noarchive, nofollow, noai, noimageai">
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-    <meta http-equiv="X-Content-Type-Options" content="nosniff">
-    <meta http-equiv="X-XSS-Protection" content="0">
-    <!-- Authorship -->
-    <meta name="author" content="Poyi Liu | https://github.com/fraubentz">
-    <meta name="image" content="img/portraitpoyibentz.webp" description="Cartoon image of Poyi Liu">
-    <meta name="description" content="Website of Poyi Liu">
-    <!-- Favicon -->
-    <link rel="icon" href="img/pyfavicon.webp" type="image/x-icon">
-    <title>PY Liu</title>
-    <!-- External CSS -->
-    <link rel="stylesheet" href="style.css">
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0b0d11" />
+    <meta name="robots" content="noarchive, noindex, nofollow, noai, noimageai" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https://github.githubassets.com; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src https://api.github.com; base-uri 'self'; form-action 'self' mailto:; frame-ancestors 'none';" />
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta http-equiv="Referrer-Policy" content="no-referrer" />
+    <meta name="description" content="Digital portfolio and GitHub landing page for fraubentz." />
+    <link rel="icon" href="https://github.githubassets.com/favicons/favicon-dark.svg" type="image/svg+xml" />
+    <title>fraubentz</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
 
-<body>
-    <div class="whole-container">   
-        <main>
-            <h1>PY     <input type="image" src="img/darkmode.webp" width="40" height="40" alt="Dark-mode Button"></h1>
-            <h2>//frau.Bentz</h2>
-            <nav>
-                <a href="index.html"><div class="navbutton">_home</div></a>
-                <a href="about.html"><div class="navbutton">_about</div></a>
-                <a href="contact.html"><div class="navbutton">_contact</div></a>
-            </nav>
-            <h3>Welcome to my digital Wunderkammer. This is the place where I share my curiosities and tinkerings.</h3>
-            <p></p>
-        </main>
+    <div class="frame-shell">
+      <header class="site-header">
+        <div class="container header-inner">
+          <a class="brand" href="#top" aria-label="fraubentz home">
+            <span class="brand-mark" aria-hidden="true">F</span>
+            <span class="brand-text">fraubentz</span>
+          </a>
 
-        <footer>
-            <div class="social">
-                <a href="mailto:pybentz@duck.com"><img src="img/email.svg" width="20" height="20" alt="Email Icon"></a>
-                <a href="https://github.com/fraubentz" target="_blank" rel="noopener noreferrer"><img src="img/github-octocat.svg" width="20" height="20" alt="GitHub Icon"></a>    
-                <a href="https://codepen.io/fraubentz" target="_blank" rel="noopener noreferrer"><img src="img/codepen-icon.svg" width="20" height="20" alt="CodePen Icon"></a>
+          <nav aria-label="Main navigation">
+            <ul class="nav-list">
+              <li><a href="#about">_about</a></li>
+              <li><a href="#projects">_projects</a></li>
+              <li><a href="colophon.html">_colophon</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+
+      <main id="main-content">
+        <section class="hero section">
+          <div class="container hero-grid">
+            <div class="hero-copy">
+              <p class="eyebrow">digital wunderkammer</p>
+              <h1>fraubentz</h1>
+              <p class="hero-tag">// curious builder / browser tinkerer / codes from scratch</p>
+
+              <p class="lede">
+                I build small but meaningful web projects, experiments, and handcrafted interfaces that
+                are intentionally readable, lightweight, and human-centred.
+              </p>
+
+              <div class="hero-actions">
+                <a class="button primary" href="#projects">View projects</a>
+                <button id="emailButton" class="button secondary" type="button" aria-label="Reveal email address">
+                  Reveal email
+                </button>
+              </div>
+
+              <ul class="meta-list" aria-label="Highlights">
+                <li>hand-crafted</li>
+                <li>mobile-first</li>
+                <li>accessible</li>
+              </ul>
             </div>
-            <p><b>Coded with &#10084 by Yours Truly</b></p>
-            <p> </p>
-            <p> Copyright &copy <span id="current-year"></span> Poyi Liu. All rights reserved.</p>
-            <a href="colophon.html"><div class="colophon-button">Colophon</div></a>
-        </footer>
+
+            <aside class="profile-card" aria-label="Profile summary">
+              <div class="card-header">
+                <span class="status-dot" aria-hidden="true"></span>
+                <span>active online</span>
+              </div>
+
+              <div class="profile-body">
+                <p class="label">Focus</p>
+                <h2>Front-end craft, experiments, and practical web tooling.</h2>
+                <ul>
+                  <li>HTML, CSS, JavaScript</li>
+                  <li>Responsive interfaces</li>
+                  <li>Privacy-conscious design</li>
+                </ul>
+              </div>
+            </aside>
+          </div>
+        </section>
+
+        <section id="about" class="section section-alt">
+          <div class="container">
+            <div class="section-heading">
+              <p class="eyebrow">_about</p>
+              <h2>Curious, hands-on, and focused on usable design.</h2>
+            </div>
+
+            <div class="about-grid">
+              <p>
+                My work sits between experimentation and practical design: web pages, little tools,
+                playful interfaces, and projects that are built to be useful, readable, and easy to explore.
+              </p>
+              <p>
+                This place is a small archive of what I am learning, making, and revisiting — a digital
+                cabinet of experiments, ideas, and public code.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section id="projects" class="section section-alt projects-section">
+          <div class="container">
+            <div class="projects-header">
+              <div>
+                <p class="eyebrow">_projects</p>
+                <h2>Public repositories</h2>
+              </div>
+
+              <label class="search-field" for="repo-search">
+                <span class="sr-only">Filter repositories</span>
+                <input id="repo-search" type="search" placeholder="Filter by name or language" aria-label="Filter repositories" />
+              </label>
+            </div>
+
+            <div id="repo-list" class="repo-grid" aria-live="polite"></div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="container footer-inner">
+          <p>© <span id="year"></span> fraubentz</p>
+        </div>
+      </footer>
     </div>
 
+    <template id="repo-template">
+      <article class="repo-card">
+        <div class="repo-topline">
+          <h3 class="repo-name"></h3>
+          <span class="repo-language"></span>
+        </div>
 
+        <p class="repo-description"></p>
 
-    <!-- Toggle Dark Mode -->
-    <script>
-        let btnBack = document.querySelector("input");
-        btnBack.addEventListener('click', () => {
-            document.body.classList.toggle('dark-mode');
-        });
-    </script>
+        <div class="repo-meta" aria-label="Repository statistics">
+          <span class="repo-stars">★ 0</span>
+          <span class="repo-forks">⎇ 0</span>
+        </div>
 
-    <!-- Copyright Date Script -->
-    <script>
-        document.querySelector("#current-year").textContent = new Date().getFullYear();
-    </script>
-</body>
+        <a class="repo-link" href="#" target="_blank" rel="noreferrer">Open repository</a>
+      </article>
+    </template>
 
+    <script src="script.js"></script>
+  </body>
 </html>

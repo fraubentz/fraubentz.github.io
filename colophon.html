@@ -1,81 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <!-- Responsive -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="mobile-web-app-capable" content="yes">
-    <!-- Security -->
-    <meta name="robots" content="noarchive, nofollow, noai, noimageai">
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-    <meta http-equiv="X-Content-Type-Options" content="nosniff">
-    <meta http-equiv="X-XSS-Protection" content="0">
-    <!-- Authorship -->
-    <meta name="author" content="Poyi Liu | https://github.com/fraubentz">
-    <meta name="image" content="img/portraitpoyibentz.webp" description="Cartoon image of Poyi Liu">
-    <meta name="description" content="Website of Poyi Liu">
-    <!-- Favicon -->
-    <link rel="icon" href="img/pyfavicon.webp" type="image/x-icon">
-    <title>PY Liu</title>
-    <!-- External CSS -->
-    <link rel="stylesheet" href="style.css">
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noarchive, noindex, nofollow, noai, noimageai" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; script-src 'self'; form-action 'self' mailto:;" />
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta name="description" content="Colophon for the fraubentz website." />
+    <title>fraubentz — colophon</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
 
-<body>
-    <!-- Background Image -->
-    <div class="background-image"></div>
-    <div class="whole-container">
-        <main>
-            <h1>PY     <input type="image" src="img/darkmode.webp" width="40" height="40" alt="Dark-mode Button"></h1>
-            <h2>//colophon</h2>
-            <nav>
-                <a href="index.html"><div class="navbutton">_home</div></a>
-                <a href="about.html"><div class="navbutton">_about</div></a>
-                <a href="contact.html"><div class="navbutton">_contact</div></a>
-            </nav>
-            <div class="code-block">
-    I chose to forgo implementing any framework and built this website from scratch using HTML (semantic markups and coming soon, microformats), CSS, and a few JS bits. My go-to code editor is <a href="https://code.visualstudio.com/" target="_blank" rel="noopener noreferrer"><div class="txtbutton">Visual Studio Code</div></a>. I intend to stick to HTML and CSS as much as possible. I will use JavaScript only when necessary.
-    
-    The source code for the site is hosted in a <a href="https://github.com/fraubentz/fraubentz.github.io" target="_blank" rel="noopener noreferrer"><div class="txtbutton">public repository</div></a> on GitHub. The whole project is deployed via <a href="https://pages.github.com/" target="_blank" rel="noopener noreferrer"><div class="txtbutton">GitHub Pages</div></a>, as well as <a href="https://www.cloudflare.com/" target="_blank" rel="noopener noreferrer"><div class="txtbutton">Cloudflare</div></a>. At the moment, I am still figuring which deployment manager suits me best.
-    
-    As I work on this website, I have the following priorities in mind:
-        1) Accessibility
-        2) Mobile-first design principles
-        3) Security and privacy
-        4) Carbon footprint reduction
-        5) Speed and energy efficiency
+    <div class="frame-shell">
+      <header class="site-header">
+        <div class="container header-inner">
+          <a class="brand" href="index.html" aria-label="fraubentz home">
+            <span class="brand-mark" aria-hidden="true">F</span>
+            <span class="brand-text">fraubentz</span>
+          </a>
 
-    This site does not track its visitors nor does it allow web scrapers and crawlers. No cookies can be found either.
+          <nav aria-label="Main navigation">
+            <ul class="nav-list">
+              <li><a href="index.html">_home</a></li>
+              <li><a href="colophon.html">_colophon</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+
+      <main id="main-content">
+        <section class="section">
+          <div class="container">
+            <p class="eyebrow">_colophon</p>
+            <h1>Colophon</h1>
+
+            <div class="about-grid">
+              <div>
+                <p>
+                  This site is built from scratch using semantic HTML, modern CSS, and a small amount of
+                  JavaScript. It is intentionally lightweight, readable, and easy to maintain without a
+                  framework or dependency stack.
+                </p>
+                <p>
+                  The source is hosted in a public repository and remains open for inspection, but the site
+                  is designed to respect privacy and reduce unnecessary tracking or data leakage.
+                </p>
+              </div>
+
+              <div>
+                <p>
+                  The following priorities guide the work:
+                </p>
+                <ol class="priority-list">
+                  <li>Accessibility</li>
+                  <li>Mobile-first design principles</li>
+                  <li>Security and privacy</li>
+                  <li>Carbon footprint reduction</li>
+                  <li>Speed and energy efficiency</li>
+                </ol>
+              </div>
             </div>
-        </main>
 
-        <footer>
-            <div class="social">
-                <a href="mailto:pybentz@duck.com"><img src="img/email.svg" width="20" height="20" alt="Email Icon"></a>
-                <a href="https://github.com/fraubentz" target="_blank" rel="noopener noreferrer"><img src="img/github-octocat.svg" width="20" height="20" alt="GitHub Icon"></a>    
-                <a href="https://codepen.io/fraubentz" target="_blank" rel="noopener noreferrer"><img src="img/codepen-icon.svg" width="20" height="20" alt="CodePen Icon"></a>
+            <div class="meta-panel">
+              <p>
+                This site does not use analytics, cookies, trackers, or third-party advertising scripts.
+                It does not expose email addresses in plain text in the HTML source, and it avoids web-crawler
+                friendliness where possible.
+              </p>
             </div>
-            <p><b>Coded with &#10084 by Yours Truly</b></p>
-            <p> </p>
-            <p> Copyright &copy <span id="current-year"></span> Poyi Liu. All rights reserved.</p>
-            <a href="colophon.html"><div class="colophon-button">Colophon</div></a>
-        </footer>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="container footer-inner">
+          <p>© <span id="year"></span> fraubentz</p>
+        </div>
+      </footer>
     </div>
 
-
-
-    <!-- Toggle Dark Mode -->
-    <script>
-        let btnBack = document.querySelector("input");
-        btnBack.addEventListener('click', () => {
-            document.body.classList.toggle('dark-mode');
-        });
-    </script>
-
-    <!-- Copyright Date Script -->
-    <script>
-        document.getElementById("current-year").textContent = new Date().getFullYear();
-    </script>
-</body>
-
+    <script src="script.js"></script>
+  </body>
 </html>
