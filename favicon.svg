@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="PY monogram">
+  <rect width="64" height="64" rx="14" fill="#120f0d"/>
+  <rect x="1.5" y="1.5" width="61" height="61" rx="12.5" fill="none" stroke="#3a2d22" stroke-width="1.2"/>
+
+  <path
+    d="M20 15v34M20 15h14.2c8.2 0 13.3 4 13.3 10.3S42.4 35.7 34.2 35.7H20"
+    fill="none"
+    stroke="#F6EFE3"
+    stroke-width="4.2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+
+  <path
+    d="M23 15L32 28L41 15M32 28v21"
+    fill="none"
+    stroke="#D79B3A"
+    stroke-width="4.2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+</svg>
