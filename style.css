@@ -116,40 +116,14 @@ h3 {
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 0.8rem;
+  gap: 0.75rem;
   font-weight: 700;
   letter-spacing: -0.04em;
 }
 
-.brand-mark {
-  width: 2.6rem;
-  height: 2.6rem;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: transparent;
-  border-radius: 0;
-  box-shadow: none;
-}
-
-.pixel-cat {
-  width: 2.2rem;
-  height: 2.2rem;
-  display: block;
-  image-rendering: pixelated;
-  color: var(--accent);
-  filter: drop-shadow(0 0 10px rgba(215, 155, 58, 0.25));
-  animation: cat-bob 2.4s ease-in-out infinite alternate;
-  transform-origin: center;
-}
-
-@keyframes cat-bob {
-  0% { transform: translateY(0px); }
-  100% { transform: translateY(-1px); }
-}
-
 .brand-text {
   font-size: 1.08rem;
+  color: var(--text);
 }
 
 .nav-list {
