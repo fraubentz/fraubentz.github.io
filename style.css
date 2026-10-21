@@ -122,14 +122,30 @@ h3 {
 }
 
 .brand-mark {
-  width: 2rem;
-  height: 2rem;
-  display: inline-grid;
-  place-items: center;
+  width: 2.1rem;
+  height: 2.1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 50%;
   background: linear-gradient(135deg, var(--accent), var(--accent-strong));
   color: #17110d;
   box-shadow: 0 0 18px rgba(215, 155, 58, 0.25);
+}
+
+.pixel-cat {
+  width: 1.05rem;
+  height: 1.05rem;
+  display: block;
+  image-rendering: pixelated;
+  color: #17110d;
+  animation: cat-bob 2.4s ease-in-out infinite alternate;
+  transform-origin: center;
+}
+
+@keyframes cat-bob {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(-1px); }
 }
 
 .brand-text {
