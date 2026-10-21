@@ -1,21 +1,22 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="PY monogram">
-  <rect width="64" height="64" rx="14" fill="#120f0d"/>
-  <rect x="1.5" y="1.5" width="61" height="61" rx="12.5" fill="none" stroke="#3a2d22" stroke-width="1.2"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="PY monogram stamp">
+  <rect x="2" y="2" width="60" height="60" rx="14" fill="#120f0d"/>
+  <rect x="4.5" y="4.5" width="55" height="55" rx="11.5" fill="none" stroke="#D7B06A" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="9" y="9" width="46" height="46" rx="10" fill="none" stroke="#F6EFE3" stroke-opacity="0.12" stroke-width="1"/>
 
   <path
-    d="M20 15v34M20 15h14.2c8.2 0 13.3 4 13.3 10.3S42.4 35.7 34.2 35.7H20"
+    d="M18 16v32M18 16h15.5c8.9 0 14.5 4.5 14.5 11.2S42.4 38.5 33.5 38.5H18"
     fill="none"
     stroke="#F6EFE3"
-    stroke-width="4.2"
+    stroke-width="5.8"
     stroke-linecap="round"
     stroke-linejoin="round"
   />
 
   <path
-    d="M23 15L32 28L41 15M32 28v21"
+    d="M23 16L32 28L41 16M32 28v20"
     fill="none"
     stroke="#D79B3A"
-    stroke-width="4.2"
+    stroke-width="5.8"
     stroke-linecap="round"
     stroke-linejoin="round"
   />
