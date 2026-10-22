@@ -2,7 +2,11 @@
   "use strict";
 
   const GITHUB_USER = "fraubentz";
-  const API_URL = `https://api.github.com/users/${GITHUB_USER}/repos?per_page=100&sort=updated`;
+  const GITHUB_ORG = "BentzStudio";
+  const API_URLS = [
+    `https://api.github.com/users/${GITHUB_USER}/repos?per_page=100&sort=updated`,
+    `https://api.github.com/orgs/${GITHUB_ORG}/repos?per_page=100&sort=updated`,
+  ];
 
   const yearEl = document.getElementById("year");
   if (yearEl) {
@@ -87,15 +91,32 @@
 
   showMessage("Loading repositories…");
 
-  fetch(API_URL, { headers: { Accept: "application/vnd.github+json" } })
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error(`GitHub API returned ${response.status}`);
-      }
-      return response.json();
-    })
-    .then((data) => {
-      repos = data.filter((repo) => !repo.fork && !repo.archived);
+  Promise.all(
+    API_URLS.map((url) =>
+      fetch(url, { headers: { Accept: "application/vnd.github+json" } }).then((response) => {
+        if (!response.ok) {
+          throw new Error(`GitHub API returned ${response.status} for ${url}`);
+        }
+        return response.json();
+      })
+    )
+  )
+    .then((results) => {
+      const merged = new Map();
+
+      results.flat().forEach((repo) => {
+        if (!repo || repo.fork || repo.archived) {
+          return;
+        }
+
+        if (repo.owner && repo.owner.login && ![GITHUB_USER, GITHUB_ORG].includes(repo.owner.login)) {
+          return;
+        }
+
+        merged.set(repo.id, repo);
+      });
+
+      repos = [...merged.values()].sort((a, b) => (b.updated_at || "").localeCompare(a.updated_at || ""));
 
       if (!repos.length) {
         showMessage("No public repositories to show yet.");
